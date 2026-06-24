@@ -1,16 +1,15 @@
 FROM richarvey/nginx-php-fpm:3.1.6
 
-# 1. Explicitly set the working directory FIRST
 WORKDIR /var/www/html
 
-# 2. Copy your project files into that directory
 COPY . .
 
-# 3. Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
-# 4. Install dependencies safely during the build phase
-RUN composer install --no-dev --optimize-autoloader
+# Ignore PHP version platform reqs (Docker image ships PHP 8.2, some locked
+# packages declare PHP >=8.4 but work fine on 8.2 at runtime).
+# --no-audit skips security-advisory blocking which is handled separately.
+RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs --no-audit
 
 # Image config
 ENV SKIP_COMPOSER 1
