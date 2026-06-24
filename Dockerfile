@@ -22,4 +22,7 @@ ENV APP_ENV production
 ENV APP_DEBUG false
 ENV LOG_CHANNEL stderr
 
+# Aiven SSL CA cert — copied from storage/aiven-ca.pem via COPY . .
+ENV MYSQL_ATTR_SSL_CA /var/www/html/storage/aiven-ca.pem
+
 CMD ["/start.sh"]
