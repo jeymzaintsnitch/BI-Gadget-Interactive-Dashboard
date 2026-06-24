@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 echo "Installing dependencies..."
 composer install --no-dev --working-dir=/var/www/html --optimize-autoloader
 
