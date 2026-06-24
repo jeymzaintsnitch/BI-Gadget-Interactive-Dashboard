@@ -1,6 +1,7 @@
 # 🚀 GadgetBI — Laravel Sales Analytics Dashboard
 
 A full-stack Laravel web application with:
+
 - ✅ **Interactive BI Dashboard** answering 11 business intelligence questions
 - ✅ **Complete CRUD** for all 8 entities (Customers, Products, Orders, Employees, Offices, ProductLines, Payments, Users)
 - ✅ **Role-Based Access Control** (Admin, Manager, Analyst, Staff)
@@ -11,13 +12,13 @@ A full-stack Laravel web application with:
 
 ## 📋 Requirements
 
-| Tool        | Version     |
-|-------------|-------------|
-| PHP         | 8.1+        |
-| Composer    | 2.x         |
-| MySQL       | 8.0+        |
-| Node.js     | 16+         |
-| Laravel     | 10.x        |
+| Tool     | Version |
+| -------- | ------- |
+| PHP      | 8.1+    |
+| Composer | 2.x     |
+| MySQL    | 8.0+    |
+| Node.js  | 16+     |
+| Laravel  | 10.x    |
 
 ---
 
@@ -80,29 +81,29 @@ Open: **http://localhost:8000**
 
 All accounts use password: **`password`**
 
-| Role    | Email                       | Access Level                        |
-|---------|-----------------------------|-------------------------------------|
-| Admin   | admin@gadgetstore.com       | Full access + User/Role Management  |
-| Manager | manager@gadgetstore.com     | All data, manage orders/customers   |
-| Analyst | analyst@gadgetstore.com     | Read-only dashboard & reports       |
-| Staff   | staff@gadgetstore.com       | Manage orders and customers only    |
+| Role    | Email                   | Access Level                       |
+| ------- | ----------------------- | ---------------------------------- |
+| Admin   | admin@gadgetstore.com   | Full access + User/Role Management |
+| Manager | manager@gadgetstore.com | All data, manage orders/customers  |
+| Analyst | analyst@gadgetstore.com | Read-only dashboard & reports      |
+| Staff   | staff@gadgetstore.com   | Manage orders and customers only   |
 
 ---
 
 ## 📊 Dashboard — 11 Business Intelligence Questions
 
-| # | Question                                             | Chart Type      |
-|---|------------------------------------------------------|-----------------|
-| Q1 | Which city is the best market for sales?            | Bar + Table     |
-| Q2 | Which product has the highest sales?                | Horizontal Bar  |
-| Q3 | Which office provides the best sales support?       | Doughnut        |
-| Q4 | Which product line generates the most revenue?      | Pie             |
-| Q5 | Which office manages the highest-revenue products?  | Table           |
-| Q6 | Which products have the most delayed shipments?     | Table w/ badges |
-| Q7 | Which country contributes the most total orders?    | Horizontal Bar  |
-| Q8 | How do sales trend month-over-month?                | Dual-axis Line  |
-| Q9 | Which employee has the best revenue-per-customer?   | Bar + Table     |
-| Q10| Which month/year had the highest sales overall?     | Ranked Table    |
+| #   | Question                                           | Chart Type      |
+| --- | -------------------------------------------------- | --------------- |
+| Q1  | Which city is the best market for sales?           | Bar + Table     |
+| Q2  | Which product has the highest sales?               | Horizontal Bar  |
+| Q3  | Which office provides the best sales support?      | Doughnut        |
+| Q4  | Which product line generates the most revenue?     | Pie             |
+| Q5  | Which office manages the highest-revenue products? | Table           |
+| Q6  | Which products have the most delayed shipments?    | Table w/ badges |
+| Q7  | Which country contributes the most total orders?   | Horizontal Bar  |
+| Q8  | How do sales trend month-over-month?               | Dual-axis Line  |
+| Q9  | Which employee has the best revenue-per-customer?  | Bar + Table     |
+| Q10 | Which month/year had the highest sales overall?    | Ranked Table    |
 
 ---
 
@@ -160,16 +161,16 @@ users → roles
 
 ## 🔒 Role Permissions Matrix
 
-| Feature            | Admin | Manager | Analyst | Staff |
-|--------------------|-------|---------|---------|-------|
-| Dashboard          | ✅    | ✅      | ✅      | ✅    |
-| View all data      | ✅    | ✅      | ✅      | ✅    |
-| Create/Edit CRUD   | ✅    | ✅      | ❌      | ✅*   |
-| Delete records     | ✅    | ✅      | ❌      | ❌    |
-| User Management    | ✅    | ❌      | ❌      | ❌    |
-| Role Management    | ✅    | ❌      | ❌      | ❌    |
+| Feature          | Admin | Manager | Analyst | Staff |
+| ---------------- | ----- | ------- | ------- | ----- |
+| Dashboard        | ✅    | ✅      | ✅      | ✅    |
+| View all data    | ✅    | ✅      | ✅      | ✅    |
+| Create/Edit CRUD | ✅    | ✅      | ❌      | ✅\*  |
+| Delete records   | ✅    | ✅      | ❌      | ❌    |
+| User Management  | ✅    | ❌      | ❌      | ❌    |
+| Role Management  | ✅    | ❌      | ❌      | ❌    |
 
-*Staff can manage orders and customers.
+\*Staff can manage orders and customers.
 
 ---
 
