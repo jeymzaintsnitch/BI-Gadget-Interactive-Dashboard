@@ -1,15 +1,18 @@
 #!/usr/bin/env bash
+# Run during container startup by richarvey/nginx-php-fpm (RUN_SCRIPTS=1)
 set -e
-echo "Installing dependencies..."
-composer install --no-dev --working-dir=/var/www/html --optimize-autoloader
 
-echo "Caching config..."
+echo "==> Setting storage permissions..."
+chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+
+echo "==> Caching config..."
 php artisan config:cache
 
-echo "Caching routes..."
+echo "==> Caching routes..."
 php artisan route:cache
 
-echo "Running migrations..."
-php artisan migrate --force
+echo "==> Running migrations..."
+php artisan migrate --force || echo "WARNING: Migration failed — DB may not be reachable yet."
 
-echo "Done — Laravel is ready."
+echo "==> Done — Laravel is ready."
