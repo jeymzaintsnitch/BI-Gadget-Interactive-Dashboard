@@ -9,7 +9,7 @@ A full-stack Laravel web application with:
 - ✅ **Bootstrap 5** responsive design with custom sidebar
 
 ---
-
+            
 ## 📋 Requirements
 
 | Tool     | Version |
@@ -84,8 +84,6 @@ All accounts use password: **`password`**
 | Role    | Email                   | Access Level                       |
 | ------- | ----------------------- | ---------------------------------- |
 | Admin   | admin@gadgetstore.com   | Full access + User/Role Management |
-| Manager | manager@gadgetstore.com | All data, manage orders/customers  |
-| Analyst | analyst@gadgetstore.com | Read-only dashboard & reports      |
 | Staff   | staff@gadgetstore.com   | Manage orders and customers only   |
 
 ---
@@ -161,14 +159,14 @@ users → roles
 
 ## 🔒 Role Permissions Matrix
 
-| Feature          | Admin | Manager | Analyst | Staff |
-| ---------------- | ----- | ------- | ------- | ----- |
-| Dashboard        | ✅    | ✅      | ✅      | ✅    |
-| View all data    | ✅    | ✅      | ✅      | ✅    |
-| Create/Edit CRUD | ✅    | ✅      | ❌      | ✅\*  |
-| Delete records   | ✅    | ✅      | ❌      | ❌    |
-| User Management  | ✅    | ❌      | ❌      | ❌    |
-| Role Management  | ✅    | ❌      | ❌      | ❌    |
+| Feature          | Admin |  Staff  |
+| ---------------- | ----- | ------- | 
+| Dashboard        | ✅    | ✅     | 
+| View all data    | ✅    | ✅     |
+| Create/Edit CRUD | ✅    | ✅     | 
+| Delete records   | ✅    | ❌     |
+| User Management  | ✅    | ❌     |
+| Role Management  | ✅    | ❌     |
 
 \*Staff can manage orders and customers.
 
