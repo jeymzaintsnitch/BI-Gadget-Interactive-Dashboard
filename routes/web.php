@@ -12,7 +12,8 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 
-Route::get('/',        [LoginController::class, 'showLogin'])->name('login');
+Route::get('/',        [LoginController::class, 'showLogin'])->name('home');
+Route::get('/login',   [LoginController::class, 'showLogin'])->name('login');
 Route::post('/login',  [LoginController::class, 'login'])->name('login.post');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 

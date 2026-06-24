@@ -12,7 +12,7 @@ php artisan config:cache
 echo "==> Caching routes..."
 php artisan route:cache
 
-echo "==> Running migrations..."
-php artisan migrate --force || echo "WARNING: Migration failed — DB may not be reachable yet."
+echo "==> Running migrations and seeders..."
+php artisan migrate --force --seed || echo "WARNING: Migration failed — DB may not be reachable yet."
 
 echo "==> Done — Laravel is ready."
