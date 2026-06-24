@@ -8,8 +8,7 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 
 # Ignore PHP version platform reqs (Docker image ships PHP 8.2, some locked
 # packages declare PHP >=8.4 but work fine on 8.2 at runtime).
-# --no-audit skips security-advisory blocking which is handled separately.
-RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs --no-audit
+RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs
 
 # Image config
 ENV SKIP_COMPOSER 1
