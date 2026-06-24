@@ -13,6 +13,7 @@ echo "==> Caching routes..."
 php artisan route:cache
 
 echo "==> Running migrations and seeders..."
-php artisan migrate --force --seed || echo "WARNING: Migration failed — DB may not be reachable yet."
+php artisan migrate --force || echo "WARNING: Migration failed — DB may not be reachable yet."
+php artisan db:seed --force || echo "WARNING: Seeding failed (data may already exist)."
 
 echo "==> Done — Laravel is ready."

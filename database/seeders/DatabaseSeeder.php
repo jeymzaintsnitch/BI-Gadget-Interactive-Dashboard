@@ -11,26 +11,26 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // ── Roles ────────────────────────────────────────────────────
-        $adminRoleId = DB::table('roles')->insertGetId([
-            'name' => 'Admin', 'description' => 'Full system access',
-            'created_at' => now(), 'updated_at' => now(),
+        DB::table('roles')->updateOrInsert(['name' => 'Admin'], [
+            'description' => 'Full system access', 'created_at' => now(), 'updated_at' => now()
         ]);
-        DB::table('roles')->insert(['name' => 'Staff', 'description' => 'Standard staff access', 'created_at' => now(), 'updated_at' => now()]);
+        DB::table('roles')->updateOrInsert(['name' => 'Staff'], [
+            'description' => 'Standard staff access', 'created_at' => now(), 'updated_at' => now()
+        ]);
 
-        $staffRoleId  = DB::table('roles')->where('name', 'Staff')->value('id');
+        $adminRoleId = DB::table('roles')->where('name', 'Admin')->value('id');
+        $staffRoleId = DB::table('roles')->where('name', 'Staff')->value('id');
 
         // ── Admin User ───────────────────────────────────────────────
-        DB::table('users')->insert([
-            'name' => 'Admin', 'email' => 'admin@gadgetstore.com',
-            'password' => Hash::make('password'), 'role_id' => $adminRoleId,
-            'created_at' => now(), 'updated_at' => now(),
+        DB::table('users')->updateOrInsert(['email' => 'admin@gadgetstore.com'], [
+            'name' => 'Admin', 'password' => Hash::make('password'), 'role_id' => $adminRoleId,
+            'created_at' => now(), 'updated_at' => now()
         ]);
 
         // ── Staff User ───────────────────────────────────────────────
-        DB::table('users')->insert([
-            'name' => 'Staff User', 'email' => 'staff@gadgetstore.com',
-            'password' => Hash::make('password'), 'role_id' => $staffRoleId,
-            'created_at' => now(), 'updated_at' => now(),
+        DB::table('users')->updateOrInsert(['email' => 'staff@gadgetstore.com'], [
+            'name' => 'Staff User', 'password' => Hash::make('password'), 'role_id' => $staffRoleId,
+            'created_at' => now(), 'updated_at' => now()
         ]);
 
         // ── Offices ──────────────────────────────────────────────────
